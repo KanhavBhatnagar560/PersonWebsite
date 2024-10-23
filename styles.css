@@ -1,0 +1,62 @@
+    body {
+        width: 100vw;
+        height: 100vh;
+        color: white;
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: flex-start; /* Align items to the start (top) */
+        align-items: center;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    #flow {
+        width: 800px;
+        height: 400px;
+        overflow: hidden;
+        box-shadow: inset 20px 0px 30px black, inset -20px 0px 30px black;
+        margin-top: 50px; /* Space below the text */
+    }
+
+    .row {
+        height: 50%;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px; /* Increase this value to lower images */
+    }
+
+    .stack {
+        height: 100%;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: toTheLeft 30s infinite linear;
+        z-index: -2;
+    }
+
+    img {
+        height: 35px; /* Adjust height to make images smaller */
+        width: 42px; /* Adjust width to make images smaller */
+        margin: 10px; /* Adjust margin as necessary */
+    }
+
+    @keyframes toTheLeft {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .text {
+        position: absolute; /* Position text absolutely */
+        top: 50px; /* Lower the text as needed */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center the text */
+        z-index: 10; /* Ensure it appears above other elements */
+        font-size: 90px; /* Adjust font size as needed */
+    }
